@@ -1,0 +1,41 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+string pedirConjunto(string mensaje) {
+    string conjunto;
+    cout << mensaje;
+    getline(cin, conjunto);
+    return conjunto;
+}
+
+string interseccion(string a, string b) {
+    string resultado = "";
+    for (char c : a) {
+        for (char d : b) {
+            if (c == d && resultado.find(c) == string::npos) {
+                resultado += c;
+            }
+        }
+    }
+    return resultado;
+}
+
+void mostrarResultado(string c) {
+    cout << "C = {";
+    for (int i = 0; i < c.length(); i++) {
+        cout << c[i];
+        if (i != c.length() - 1) {
+            cout << ",";
+        }
+    }
+    cout << "}" << endl;
+}
+
+int main() {
+    string a = pedirConjunto("Ingrese conjunto A: ");
+    string b = pedirConjunto("Ingrese conjunto B: ");
+    string c = interseccion(a, b);
+    mostrarResultado(c);
+    return 0;
+}
