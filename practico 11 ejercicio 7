@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+string pedirTexto() {
+    string texto;
+    cout << "Ingrese un texto: ";
+    getline(cin, texto);
+    return texto;
+}
+
+string ordenarAlfabeticamente(string cadena) {
+    sort(cadena.begin(), cadena.end());
+    return cadena;
+}
+
+void mostrarResultado(string texto) {
+    cout << texto << endl;
+}
+
+int main() {
+    string texto = pedirTexto();
+    string ordenado = ordenarAlfabeticamente(texto);
+    mostrarResultado(ordenado);
+    return 0;
+}
