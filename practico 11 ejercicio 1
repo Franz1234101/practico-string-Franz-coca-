@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+string pedirTexto() {
+    string texto;
+    cout << "Ingrese un texto: ";
+    getline(cin, texto);
+    return texto;
+}
+
+string convertirMayuscula(string cadena) {
+    transform(cadena.begin(), cadena.end(), cadena.begin(), ::toupper);
+    return cadena;
+}
+
+void mostrarResultado(string texto) {
+    cout << "Texto en mayusculas: " << texto << endl;
+}
+
+int main() {
+    string texto = pedirTexto();
+    string resultado = convertirMayuscula(texto);
+    mostrarResultado(resultado);
+    return 0;
+}
