@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int pedirCantidad() {
+    int n;
+    cout << "Ingrese la cantidad de palabras: ";
+    cin >> n;
+    cin.ignore();
+    return n;
+}
+
+string leerPalabras(int n) {
+    string resultado = "";
+    string palabra;
+    for (int i = 0; i < n; i++) {
+        getline(cin, palabra);
+        resultado += palabra;
+        if (i != n - 1) {
+            resultado += " ";
+        }
+    }
+    return resultado;
+}
+
+void mostrarResultado(string texto) {
+    cout << texto << endl;
+}
+
+int main() {
+    int n = pedirCantidad();
+    string cadena = leerPalabras(n);
+    mostrarResultado(cadena);
+    return 0;
+}
