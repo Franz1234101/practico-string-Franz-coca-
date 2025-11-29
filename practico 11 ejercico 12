@@ -1,0 +1,40 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+string BorraCaracterDeCadena(string cadena, char caracter) {
+    string resultado = "";
+    for (char c : cadena) {
+        if (c != caracter) {
+            resultado += c;
+        }
+    }
+    return resultado;
+}
+
+string pedirTexto() {
+    string texto;
+    cout << "Ingrese un texto: ";
+    getline(cin, texto);
+    return texto;
+}
+
+char pedirCaracter() {
+    char c;
+    cout << "Que caracter borrar?: ";
+    cin >> c;
+    cin.ignore();
+    return c;
+}
+
+void mostrarResultado(string texto) {
+    cout << texto << endl;
+}
+
+int main() {
+    string texto = pedirTexto();
+    char c = pedirCaracter();
+    string resultado = BorraCaracterDeCadena(texto, c);
+    mostrarResultado(resultado);
+    return 0;
+}
