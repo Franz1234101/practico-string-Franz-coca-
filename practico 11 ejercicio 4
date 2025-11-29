@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+string pedirCadena() {
+    string texto;
+    cout << "Ingrese una palabra: ";
+    getline(cin, texto);
+    return texto;
+}
+
+string invertirCadena(string cadena) {
+    string invertida = "";
+    for (int i = cadena.length() - 1; i >= 0; i--) {
+        invertida += cadena[i];
+    }
+    return invertida;
+}
+
+void mostrarResultado(string invertida) {
+    cout << invertida << endl;
+}
+
+int main() {
+    string texto = pedirCadena();
+    string invertida = invertirCadena(texto);
+    mostrarResultado(invertida);
+    return 0;
+}
