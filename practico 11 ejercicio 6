@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+string pedirTexto() {
+    string texto;
+    cout << "Ingrese un texto: ";
+    getline(cin, texto);
+    return texto;
+}
+
+string eliminarVocales(string cadena) {
+    string resultado = "";
+    for (char c : cadena) {
+        char minus = tolower(c);
+        if (minus != 'a' && minus != 'e' && minus != 'i' && minus != 'o' && minus != 'u') {
+            resultado += c;
+        }
+    }
+    return resultado;
+}
+
+void mostrarResultado(string texto) {
+    cout << texto << endl;
+}
+
+int main() {
+    string texto = pedirTexto();
+    string sinVocales = eliminarVocales(texto);
+    mostrarResultado(sinVocales);
+    return 0;
+}
