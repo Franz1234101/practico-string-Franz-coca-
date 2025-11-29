@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+bool EsPalindromo(string cadena) {
+    int inicio = 0;
+    int fin = cadena.length() - 1;
+    while (inicio < fin) {
+        if (cadena[inicio] != cadena[fin]) {
+            return false;
+        }
+        inicio++;
+        fin--;
+    }
+    return true;
+}
+
+string pedirCadena() {
+    string texto;
+    cout << "Ingrese una cadena: ";
+    getline(cin, texto);
+    return texto;
+}
+
+void mostrarResultado(bool esPal) {
+    if (esPal) {
+        cout << "true" << endl;
+    } else {
+        cout << "false" << endl;
+    }
+}
+
+int main() {
+    string texto = pedirCadena();
+    bool resultado = EsPalindromo(texto);
+    mostrarResultado(resultado);
+    return 0;
+}
