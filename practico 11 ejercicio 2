@@ -1,0 +1,37 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+string pedirTexto() {
+    string texto;
+    cout << "Ingrese un texto: ";
+    getline(cin, texto);
+    return texto;
+}
+
+int contarPalabras(string cadena) {
+    int contador = 0;
+    bool enPalabra = false;
+
+    for (char c : cadena) {
+        if (c != ' ' && !enPalabra) {
+            enPalabra = true;
+            contador++;
+        } else if (c == ' ') {
+            enPalabra = false;
+        }
+    }
+
+    return contador;
+}
+
+void mostrarResultado(int palabras) {
+    cout << palabras << " palabras" << endl;
+}
+
+int main() {
+    string texto = pedirTexto();
+    int cantidad = contarPalabras(texto);
+    mostrarResultado(cantidad);
+    return 0;
+}
