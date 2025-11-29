@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+string SubCadena(string cadena, int posicion, int longitud) {
+    return cadena.substr(posicion - 1, longitud);
+}
+
+string pedirCadena() {
+    string texto;
+    cout << "Ingrese una cadena: ";
+    getline(cin, texto);
+    return texto;
+}
+
+int pedirNumero(string mensaje) {
+    int n;
+    cout << mensaje;
+    cin >> n;
+    cin.ignore();
+    return n;
+}
+
+void mostrarResultado(string subcadena) {
+    cout << subcadena << endl;
+}
+
+int main() {
+    string texto = pedirCadena();
+    int p = pedirNumero("Ingrese la posicion inicial: ");
+    int n = pedirNumero("Ingrese la longitud de la subcadena: ");
+    string resultado = SubCadena(texto, p, n);
+    mostrarResultado(resultado);
+    return 0;
+}
